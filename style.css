@@ -1,15 +1,21 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
-::root {
+:root {
   --primary-color: #ffffff;
   --sidebar-and-button-color: #1992d4;
   --main-content-background: #e2e8f0;
   --card-tab-color: #e3b131;
   --heading-text-color: #222224;
   --text-color: #aeaeae;
+  --primary-font: 'Ariel', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--primary-font);
+}
+
+li, ul {
+  list-style: none;
 }
 
 .container {
@@ -22,14 +28,27 @@
   min-height: 100vh;
 }
 
+/* sidebar */
 .sidebar {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 5fr 10fr;
   grid-area: sidebar;
+  align-items: start;
+  gap: 40px;
+  padding: 20px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  background: var(--sidebar-and-button-color);
 }
 
 .header {
   grid-area: header;
+  background: var(--primary-color);
 }
 
 .main-content {
   grid-area: main-content;
+  background: var(--main-content-background);
 }
