@@ -3,13 +3,22 @@
   padding: 0;
 }
 
+::root {
+  --primary-color: #ffffff;
+  --sidebar-and-button-color: #1992d4;
+  --main-content-background: #e2e8f0;
+  --card-tab-color: #e3b131;
+  --heading-text-color: #222224;
+  --text-color: #aeaeae;
+}
+
 .container {
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-rows: 1fr 5fr;
   grid-template-areas:
   "sidebar header"
-  "sidebar main";
+  "sidebar main-content";
   min-height: 100vh;
 }
 
@@ -22,5 +31,5 @@
 }
 
 .main-content {
-  grid-area: main;
+  grid-area: main-content;
 }
