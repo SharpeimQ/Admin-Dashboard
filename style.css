@@ -17,7 +17,7 @@
 .container {
   display: grid;
   grid-template-columns: 1fr 4fr;
-  grid-template-rows: 1fr 5fr;
+  grid-template-rows: 1fr 4fr;
   grid-template-areas:
   "sidebar header"
   "sidebar main-content";
@@ -33,7 +33,6 @@ li, ul {
 svg {
   width: 30px;
   height: 30px;
-  fill: var(--primary-color);
 }
 
 /* sidebar */
@@ -72,9 +71,119 @@ svg {
   fill: var(--primary-color);
 }
 
+.side-bar-svg {
+  width: 30px;
+  height: 30px;
+  fill: var(--primary-color);
+}
+
+/* header */
 .header {
   grid-area: header;
   background: var(--primary-color);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 2fr 3fr;
+  grid-template-areas:
+  "search-bar"
+  "inputs";
+  padding: 0 50px 20px 50px;
+}
+
+.top-half-header {
+  grid-area: search-bar;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-areas:
+  "left right";
+}
+
+.top-left-header {
+  grid-area: left;
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  align-items: center;
+}
+
+.top-right-header {
+  grid-area: right;
+  display: grid;
+  grid-template-columns: 30px 48px 200px;
+  gap: 50px;
+  justify-content: end;
+  align-items: center;
+}
+
+#search {
+  height: 30px;
+  min-width: 100px;
+  width: 800px;
+  border-style: none;
+  border-radius: 20px;
+  background-color: var(--main-content-background);
+}
+
+.bottom-half-header {
+  grid-area: inputs;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: 
+  "left right";
+}
+
+.bottom-left-header {
+  grid-area: left;
+  display: grid;
+  grid-template-columns: 98px 1fr;
+  grid-template-rows: 1fr 1fr;
+  column-gap: 10px;
+  grid-template-areas: 
+  "icon mini-text"
+  "icon username";
+}
+
+.profile-pic {
+  height: 49px;
+  width: 49px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.big-profile {
+  grid-area: icon;
+  height: 98px;
+  width: 98px;
+}
+
+.mini-text {
+  grid-area: mini-text;
+  display: grid;
+  align-items: end;
+  font-size: 0.75rem;
+}
+
+.username {
+  grid-area: username;
+  font-size: 1.4rem;
+}
+
+.bottom-right-header {
+  grid-area: right;
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  align-items: center;
+  justify-content: end;
+}
+
+.header-buttons {
+  width: 120px;
+  height: 50px;
+  border-radius: 25px;
+  border-style: none;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  background-color: var(--sidebar-and-button-color);
 }
 
 .main-content {
