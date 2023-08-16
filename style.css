@@ -4,7 +4,7 @@
   --main-content-background: #e2e8f0;
   --card-tab-color: #e3b131;
   --heading-text-color: #222224;
-  --text-color: #aeaeae;
+  --text-color: #211a1a8e;
   --primary-font: 'Ariel', sans-serif;
 }
 
@@ -30,9 +30,13 @@ li, ul {
   list-style: none;
 }
 
-svg {
+svg, img {
   width: 30px;
   height: 30px;
+}
+
+p {
+  color: var(--text-color)
 }
 
 /* sidebar */
@@ -243,18 +247,30 @@ svg {
 }
 
 .card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20px 1fr 30px;
   height: 180px;
   min-width: 380px;
   width: 420px;
   padding: 25px;
+  gap: 10px;
   background-color: var(--primary-color);
   box-shadow: 5px 5px 5px rgba(0,0,0, 0.1);
+  border-left: 10px solid var(--card-tab-color);
   border-radius: 10px;
+}
+
+.card-icons {
+  display: flex;
+  gap: 20px;
+  justify-content: end;
 }
 
 .announcements {
   display: grid;
   height: 280px;
+  min-width: 280px;
   padding: 25px;
   background-color: var(--primary-color);
   border-radius: 10px;
@@ -262,8 +278,10 @@ svg {
 }
 
 .announcement {
-  display: grid;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 5px;
   background-color: var(--primary-color);
   border-top: 2px solid rgba(0,0,0, 0.1);
 }
@@ -272,11 +290,16 @@ svg {
   border: none;
 }
 
+.announce-text {
+  font-size: 0.8rem;
+}
+
 .trending {
   display: grid;
   padding: 25px;
   grid-auto-rows: 1fr;
   border-radius: 10px;
+  min-width: 280px;
   gap: 10px;
   box-shadow: 5px 5px 5px rgba(0,0,0, 0.1);
   background-color: var(--primary-color);
@@ -284,5 +307,19 @@ svg {
 
 .popular-users {
   display: grid;
+  grid-template-columns: 49px 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: 
+  "icon user"
+  "icon description";
+  column-gap: 20px;
+}
+
+.trend-pic {
+  grid-area: icon;
+}
+
+.trend-user {
+  display: flex;
   align-items: center;
 }
